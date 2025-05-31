@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Consulente 360 | Gestione Aziendale e Crescita Strategica</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333; /* Grigio scuro per il testo principale per leggibilità */
+        }
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 700;
+        }
+        .brand-primary { color: #0D47A1; } /* Blu scuro profondo per autorevolezza */
+        .brand-secondary { color: #1565C0; } /* Blu leggermente più chiaro per accenti */
+        .brand-accent { color: #FF8F00; } /* Arancione ambrato per calore e CTA distintive */
+        .bg-brand-primary-light { background-color: #E3F2FD; } /* Sfondo azzurro molto chiaro */
+        .bg-brand-accent-light { background-color: #FFF8E1; } /* Sfondo crema/giallo chiaro */
+
+        .hero-section {
+            background: linear-gradient(rgba(13, 71, 161, 0.8), rgba(13, 71, 161, 0.7)), url('https://placehold.co/1920x1080/cccccc/969696?text=Team+Aziendale+Moderno') no-repeat center center;
+            background-size: cover;
+        }
+        .cta-button {
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+        }
+        .branch-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e0e0e0;
+        }
+        .branch-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            border-color: #0D47A1;
+        }
+        .section-title-underline::after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background-color: #FF8F00; /* Accento arancione */
+            margin: 1rem auto 0;
+        }
+        /* Animazioni discrete */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUpAnimation 0.8s ease-out forwards;
+        }
+        @keyframes fadeInUpAnimation {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .delay-200 { animation-delay: 0.2s; }
+        .delay-400 { animation-delay: 0.4s; }
+        .delay-600 { animation-delay: 0.6s; }
+    </style>
+</head>
+<body class="bg-gray-100">
+
+    <header class="bg-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-4">
+                <a href="#" class="text-3xl font-bold brand-primary">
+                    Consulente <span class="brand-accent">360</span>
+                </a>
+                <nav class="hidden md:flex space-x-6 items-center">
+                    <a href="#services" class="text-gray-700 hover:brand-secondary font-semibold">Servizi</a>
+                    <a href="#chi-siamo" class="text-gray-700 hover:brand-secondary font-semibold">Chi Siamo</a>
+                    <a href="#approccio" class="text-gray-700 hover:brand-secondary font-semibold">Approccio</a>
+                    <a href="contatti.html" class="bg-brand-accent hover:opacity-90 text-white font-bold py-2 px-5 rounded-md cta-button text-sm">
+                        Richiedi Audit Gratuito
+                    </a>
+                </nav>
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-gray-600 focus:outline-none">
+                        <svg class="w-7 h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden bg-white shadow-xl absolute w-full">
+            <a href="#services" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 hover:brand-secondary font-semibold">Servizi</a>
+            <a href="#chi-siamo" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 hover:brand-secondary font-semibold">Chi Siamo</a>
+            <a href="#approccio" class="block py-3 px-6 text-gray-700 hover:bg-gray-50 hover:brand-secondary font-semibold">Approccio</a>
+            <a href="contatti.html" class="block py-3 px-6 bg-brand-accent text-white text-center font-bold rounded-b-md hover:opacity-90 cta-button">Richiedi Audit Gratuito</a>
+        </div>
+    </header>
+
+    <section class="hero-section text-white py-20 md:py-32 fade-in-up">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h1 class="text-4xl sm:text-5xl md:text-6xl font-bold mb-6 leading-tight">
+                Gestione Semplificata, Crescita Amplificata.<br> Il Vostro Partner Aziendale a <span class="brand-accent">360°</span>.
+            </h1>
+            <p class="text-lg sm:text-xl md:text-2xl mb-10 max-w-3xl mx-auto font-light">
+                Consulente 360 è l'interlocutore unico che affianca la vostra impresa nell'ottimizzazione gestionale e nello sviluppo di strategie di crescita vincenti.
+            </p>
+            <a href="contatti.html" class="bg-brand-accent hover:opacity-90 text-white font-bold py-4 px-10 rounded-md text-lg sm:text-xl cta-button shadow-xl">
+                Iniziate con un Audit Gratuito
+            </a>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <h2 class="text-3xl md:text-4xl font-bold text-center brand-primary mb-4 section-title-underline fade-in-up">Le Due Anime della Vostra Efficienza</h2>
+            <p class="text-center text-gray-600 mb-12 md:mb-16 text-lg max-w-2xl mx-auto fade-in-up delay-200">
+                Offriamo un approccio integrato per coprire ogni aspetto della vita aziendale: dalla gestione ordinaria all'impulso per la crescita.
+            </p>
+            <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+                <div class="branch-card bg-gray-50 p-8 rounded-xl shadow-lg text-center fade-in-up delay-400">
+                    <div class="mb-6">
+                        <svg class="w-16 h-16 brand-primary mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 17.25v1.007a3 3 0 01-.379 1.503L5.25 21L3 18.75l3.75-3.75h3.75m0-3V6.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125v3.75m0 0H9.375m0 0A2.25 2.25 0 0112 13.5h2.25a2.25 2.25 0 012.25 2.25v2.25A2.25 2.25 0 0116.5 21h-6a2.25 2.25 0 01-2.25-2.25V15A2.25 2.25 0 019.375 12.75H15m0 0V9" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold brand-primary mb-4">Consulenza Gestionale</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Semplificate la burocrazia, garantite la conformità normativa e ottimizzate l'amministrazione quotidiana della vostra azienda con un partner affidabile e competente.
+                    </p>
+                    <a href="consulenza-gestionale.html" class="text-brand-accent font-bold hover:underline text-lg">
+                        Dettagli Piani Gestionali &rarr;
+                    </a>
+                </div>
+
+                <div class="branch-card bg-gray-50 p-8 rounded-xl shadow-lg text-center fade-in-up delay-600">
+                     <div class="mb-6">
+                        <svg class="w-16 h-16 brand-primary mx-auto" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                             <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
+                        </svg>
+                    </div>
+                    <h3 class="text-2xl md:text-3xl font-bold brand-primary mb-4">Growth Together (GT)</h3>
+                    <p class="text-gray-600 mb-6 leading-relaxed">
+                        Liberate il potenziale di crescita della vostra impresa. Vi supportiamo nell'accesso a bandi, nell'ottenimento di certificazioni e nello sviluppo di strategie di espansione.
+                    </p>
+                    <a href="growth-together.html" class="text-brand-accent font-bold hover:underline text-lg">
+                        Soluzioni per la Crescita &rarr;
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="approccio" class="py-16 md:py-24 bg-brand-primary-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12 md:mb-16 fade-in-up">
+                <h2 class="text-3xl md:text-4xl font-bold brand-primary mb-4 section-title-underline">Un Unico Interlocutore, Molteplici Soluzioni</h2>
+                <p class="text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed">
+                    In Consulente 360, crediamo che una gestione efficiente sia il fondamento per una crescita sostenibile. Il nostro metodo integra competenze trasversali per offrirvi un supporto completo, snellendo i processi e massimizzando le opportunità.
+                </p>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8 text-center">
+                <div class="fade-in-up delay-200">
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <svg class="w-12 h-12 brand-accent mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M3.75 13.5l10.5-11.25L12 10.5h8.25L9.75 21.75 12 13.5H3.75z" /></svg>
+                        <h4 class="text-xl font-semibold brand-primary mb-2">Efficienza Operativa</h4>
+                        <p class="text-gray-600 text-sm">Ottimizzazione dei processi gestionali per ridurre costi e tempi.</p>
+                    </div>
+                </div>
+                <div class="fade-in-up delay-400">
+                     <div class="p-6 bg-white rounded-lg shadow-md">
+                        <svg class="w-12 h-12 brand-accent mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-4.5 0V6.75A.75.75 0 0113.5 6zM15 9.75M15 12.75M15 15.75M15 18.75M9.75 15.75h1.5" /></svg>
+                        <h4 class="text-xl font-semibold brand-primary mb-2">Conformità Assicurata</h4>
+                        <p class="text-gray-600 text-sm">Supporto costante per adempimenti fiscali, sicurezza e normative.</p>
+                    </div>
+                </div>
+                <div class="fade-in-up delay-600">
+                    <div class="p-6 bg-white rounded-lg shadow-md">
+                        <svg class="w-12 h-12 brand-accent mx-auto mb-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.75A.75.75 0 013 4.5h.75m0 0a31.97 31.97 0 0115.75 0M4.5 12h15M12 4.5v15m0 0a.75.75 0 00.75.75h.75a.75.75 0 00.75-.75V4.5m-1.5 0a.75.75 0 00-.75-.75H12a.75.75 0 00-.75.75v15m0 0A2.25 2.25 0 0014.25 21h2.25a2.25 2.25 0 002.25-2.25V4.5A2.25 2.25 0 0016.5 2.25h-2.25A2.25 2.25 0 0012 4.5v15" /></svg>
+                        <h4 class="text-xl font-semibold brand-primary mb-2">Crescita Strategica</h4>
+                        <p class="text-gray-600 text-sm">Accesso a opportunità e strumenti per l'espansione del vostro business.</p>
+                    </div>
+                </div>
+            </div>
+             <div class="mt-12 text-center fade-in-up delay-600">
+                <p class="text-md text-gray-700 italic">
+                    Stiamo inoltre pianificando lo sviluppo di una piattaforma digitale integrata per offrirvi un accesso ancora più diretto e costante a documenti e supporto, H24.
+                </p>
+            </div>
+        </div>
+    </section>
+
+     <section id="chi-siamo" class="py-16 md:py-24 bg-white">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0 md:pr-12 fade-in-up">
+                    <img src="https://placehold.co/600x400/0D47A1/FFFFFF?text=Consulente+360+Team" alt="Team Consulente 360" class="rounded-xl shadow-2xl">
+                </div>
+                <div class="md:w-1/2 text-center md:text-left fade-in-up delay-200">
+                    <h2 class="text-3xl md:text-4xl font-bold brand-primary mb-6">Chi è Consulente <span class="brand-accent">360</span>?</h2>
+                    <p class="text-gray-700 text-lg mb-6 leading-relaxed">
+                        Siamo uno studio di consulenza aziendale nato con l'obiettivo di diventare il punto di riferimento per le imprese che cercano un partner affidabile per la gestione burocratica e per la crescita strategica.
+                    </p>
+                    <p class="text-gray-700 text-lg mb-8 leading-relaxed">
+                        Il nostro approccio si basa sull'ascolto, sulla personalizzazione delle soluzioni e sulla costruzione di un rapporto di fiducia duraturo.
+                    </p>
+                    <a href="chi-siamo.html" class="bg-brand-primary hover:bg-brand-secondary text-white font-bold py-3 px-8 rounded-md text-lg cta-button">
+                        Scopri di più su di noi
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-16 md:py-24 bg-brand-accent-light">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center fade-in-up">
+            <h2 class="text-3xl md:text-4xl font-bold brand-primary mb-6">Pronti a Trasformare la Vostra Azienda?</h2>
+            <p class="text-gray-700 text-lg mb-10 max-w-2xl mx-auto">
+                Un audit gratuito è il primo passo per identificare le aree di miglioramento e le opportunità di crescita. Contattateci oggi stesso per una consulenza senza impegno.
+            </p>
+            <a href="contatti.html" class="bg-brand-accent hover:opacity-90 text-white font-bold py-4 px-10 rounded-md text-lg sm:text-xl cta-button shadow-xl">
+                Richiedete l'Audit Gratuito Ora
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-gray-800 text-gray-300 py-12">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid md:grid-cols-3 gap-8 mb-8 text-center md:text-left">
+                <div>
+                    <h4 class="text-2xl font-bold text-white mb-4">Consulente <span class="brand-accent">360</span></h4>
+                    <p class="text-sm">Il Vostro Partner per Gestione e Crescita.</p>
+                    <p class="text-sm mt-2">P.IVA: IT01234567890 (Esempio)</p>
+                    <p class="text-sm">Sede Legale: Via Esempio 123, Città (XX)</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Link Rapidi</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#services" class="hover:text-white">Servizi Globali</a></li>
+                        <li><a href="consulenza-gestionale.html" class="hover:text-white">Consulenza Gestionale</a></li>
+                        <li><a href="growth-together.html" class="hover:text-white">Growth Together (GT)</a></li>
+                        <li><a href="chi-siamo.html" class="hover:text-white">Chi Siamo</a></li>
+                        <li><a href="contatti.html" class="hover:text-white">Contatti e Audit</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold text-white mb-4">Informazioni Legali</h4>
+                     <ul class="space-y-2 text-sm">
+                        <li><a href="privacy-policy.html" class="hover:text-white">Privacy Policy</a></li>
+                        <li><a href="cookie-policy.html" class="hover:text-white">Cookie Policy</a></li>
+                        </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 pt-8 text-center text-sm">
+                <p>&copy; <span id="currentYear"></span> Consulente 360. Tutti i diritti riservati.</p>
+                <p>Realizzazione Sito Web by Your AI Assistant.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+
+        // Smooth scroll for anchor links & close mobile menu
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || href === '') return; // Evita errori per link vuoti
+
+                e.preventDefault();
+                const targetId = href;
+                const targetElement = document.querySelector(targetId);
+
+                if (targetElement) {
+                    targetElement.scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                }
+                
+                if (mobileMenu && !mobileMenu.classList.contains('hidden')) {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+        });
+
+        // Set current year in footer
+        const currentYearElement = document.getElementById('currentYear');
+        if (currentYearElement) {
+            currentYearElement.textContent = new Date().getFullYear();
+        }
+
+        // Animation on scroll
+        const animatedElements = document.querySelectorAll('.fade-in-up');
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.animationPlayState = 'running';
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.1 });
+
+        animatedElements.forEach(el => {
+            el.style.animationPlayState = 'paused';
+            observer.observe(el);
+        });
+
+    </script>
+</body>
+</html>
