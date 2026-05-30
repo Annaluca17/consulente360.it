@@ -3,16 +3,26 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Consulente360 — Un'unica regia per il tuo back-office aziendale</title>
-<meta name="description" content="Consulente360: hub consulenziale integrato per PMI e aziende. Un unico referente per consulenza del lavoro, fiscale, sicurezza, medicina del lavoro e compliance HR.">
-<meta name="keywords" content="consulente del lavoro, payroll, hr outsourcing, sicurezza lavoro, HACCP, medicina del lavoro, commercialista, Paternò, Catania, Sicilia">
+<title>Consulente360 — Hub AI-Augmented per PMI | Consulenza integrata e intelligente</title>
+<meta name="description" content="Consulente360: il primo hub consulenziale AI-augmented per PMI. Un unico referente, una rete di professionisti certificati, un'intelligenza artificiale che anticipa scadenze e ottimizza i flussi documentali.">
+<meta name="keywords" content="consulenza AI PMI, hub consulenziale intelligente, consulente del lavoro AI, payroll automatizzato, compliance HR AI, sicurezza lavoro, HACCP, medicina del lavoro, commercialista, Paternò, Catania, Sicilia">
 <meta name="robots" content="index, follow">
+<meta name="author" content="Consulente360">
 
-<!-- Open Graph -->
+<!-- Open Graph aggiornato -->
 <meta property="og:type" content="website">
-<meta property="og:title" content="Consulente360 — Il tuo hub consulenziale integrato">
-<meta property="og:description" content="Fissa gli obiettivi della tua azienda. Al resto pensiamo noi.">
+<meta property="og:title" content="Consulente360 — Hub AI-Augmented per PMI">
+<meta property="og:description" content="Un unico referente. Una rete di professionisti. Un'AI che ti anticipa.">
 <meta property="og:locale" content="it_IT">
+<meta property="og:image" content="https://consulente360.it/og-image.png">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Consulente360 — Hub AI-Augmented per PMI">
+<meta name="twitter:description" content="Un unico referente. Una rete di professionisti. Un'AI che ti anticipa.">
+
+<!-- Canonical -->
+<link rel="canonical" href="https://consulente360.it">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -116,18 +126,30 @@
     gap: 4rem; align-items: center;
     position: relative; z-index: 1;
   }
+  .hero-badges {
+    display: flex; gap: 0.5rem; flex-wrap: wrap;
+    margin-bottom: 1.5rem;
+  }
   .hero-badge {
     display: inline-flex; align-items: center; gap: 8px;
     background: rgba(15,155,142,0.18); border: 1px solid rgba(15,155,142,0.4);
     color: var(--teal-light);
     font-size: 0.75rem; font-weight: 600;
     letter-spacing: 0.12em; text-transform: uppercase;
-    padding: 0.4rem 1rem; border-radius: 50px; margin-bottom: 1.75rem;
+    padding: 0.4rem 1rem; border-radius: 50px;
   }
   .hero-badge::before {
     content: ''; width: 6px; height: 6px; border-radius: 50%;
     background: var(--teal-light); animation: pulse 2s infinite;
   }
+  .hero-badge-ai {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+    color: var(--white);
+    font-weight: 600;
+    border: none;
+    box-shadow: 0 4px 16px rgba(15, 155, 142, 0.3);
+  }
+  .hero-badge-ai::before { background: var(--white); }
   @keyframes pulse {
     0%, 100% { opacity: 1; transform: scale(1); }
     50% { opacity: 0.5; transform: scale(1.3); }
@@ -233,8 +255,13 @@
   #valore { background: var(--off-white); }
   .valore-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 1.5rem;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  @media (max-width: 768px) {
+    .valore-grid { grid-template-columns: 1fr; }
   }
   .valore-card {
     background: var(--white); border-radius: var(--radius-lg);
@@ -265,6 +292,28 @@
     color: var(--navy); margin-bottom: 0.75rem;
   }
   .valore-card p { font-size: 0.9rem; color: var(--gray-600); line-height: 1.7; }
+  .valore-card-ai {
+    background: linear-gradient(135deg, var(--navy) 0%, var(--navy-light) 100%);
+    color: var(--white);
+    border: 1px solid var(--teal);
+    position: relative;
+    overflow: hidden;
+  }
+  .valore-card-ai::before {
+    content: "";
+    position: absolute;
+    top: -50%; right: -50%;
+    width: 200%; height: 200%;
+    background: radial-gradient(circle, rgba(15, 155, 142, 0.15) 0%, transparent 60%);
+    pointer-events: none;
+    transform: none;
+  }
+  .valore-card-ai h3 { color: var(--white); }
+  .valore-card-ai p { color: rgba(255, 255, 255, 0.85); }
+  .icon-ai {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+    color: var(--white);
+  }
 
   /* ── SERVIZI ── */
   #servizi { background: var(--white); }
@@ -313,8 +362,8 @@
   #come-funziona .section-sub { color: rgba(255,255,255,0.6); }
   .steps-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 2rem; position: relative;
+    grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 1.5rem; position: relative;
   }
   .step {
     position: relative; padding: 2rem;
@@ -342,6 +391,94 @@
     color: var(--white); margin-bottom: 0.6rem;
   }
   .step p { font-size: 0.875rem; color: rgba(255,255,255,0.6); line-height: 1.65; }
+  .step-ai {
+    background: linear-gradient(135deg, var(--teal) 0%, var(--teal-light) 100%);
+    color: var(--white);
+    border-color: var(--teal-light);
+  }
+  .step-ai:hover { background: linear-gradient(135deg, var(--teal-light) 0%, var(--teal) 100%); border-color: var(--white); }
+  .step-ai .step-number { color: rgba(255, 255, 255, 0.4); }
+  .step-ai .step-icon { background: rgba(255, 255, 255, 0.2); }
+  .step-ai h3 { color: var(--white); }
+  .step-ai p { color: rgba(255, 255, 255, 0.9); }
+
+  /* ── TECNOLOGIA ── */
+  #tecnologia {
+    background: var(--off-white);
+    padding: 6rem clamp(1.5rem, 5vw, 4rem);
+  }
+  .tech-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.5rem;
+    max-width: 1200px;
+    margin: 0 auto 3rem;
+  }
+  .tech-card {
+    background: var(--white);
+    border-radius: var(--radius-lg);
+    padding: 2rem;
+    border: 1px solid var(--gray-100);
+    transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+  }
+  .tech-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-hover);
+    border-color: var(--teal);
+  }
+  .tech-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: inline-block;
+    width: 56px; height: 56px;
+    line-height: 56px;
+    text-align: center;
+    background: linear-gradient(135deg, var(--off-white) 0%, var(--gray-100) 100%);
+    border-radius: var(--radius);
+  }
+  .tech-card h3 {
+    font-family: var(--font-display);
+    font-size: 1.3rem;
+    color: var(--navy);
+    margin-bottom: 0.75rem;
+    font-weight: 700;
+  }
+  .tech-card p {
+    font-size: 0.92rem;
+    color: var(--text-mid);
+    line-height: 1.65;
+  }
+  .tech-disclaimer {
+    max-width: 1000px;
+    margin: 0 auto;
+    background: var(--white);
+    border-left: 4px solid var(--teal);
+    border-radius: var(--radius);
+    padding: 1.75rem 2rem;
+    display: flex;
+    gap: 1.25rem;
+    box-shadow: var(--shadow);
+  }
+  .tech-disclaimer-icon {
+    font-size: 1.75rem;
+    flex-shrink: 0;
+  }
+  .tech-disclaimer h4 {
+    font-family: var(--font-display);
+    font-size: 1.15rem;
+    color: var(--navy);
+    margin-bottom: 0.4rem;
+    font-weight: 700;
+  }
+  .tech-disclaimer p {
+    font-size: 0.9rem;
+    color: var(--text-mid);
+    line-height: 1.6;
+    margin: 0;
+  }
+  @media (max-width: 768px) {
+    .tech-disclaimer { flex-direction: column; gap: 0.75rem; padding: 1.5rem; }
+  }
 
   /* ── PRICING (3 OPTIONS) ── */
   #pricing { background: var(--off-white); }
@@ -718,7 +855,7 @@
     border-bottom: 1px solid rgba(255,255,255,0.08);
   }
   .footer-brand p {
-    font-size: 0.875rem; color: rgba(255,255,255,0.45);
+    font-size: 0.875rem; color: rgba(255,255,255,0.7);
     max-width: 320px; margin-top: 1rem; line-height: 1.7;
   }
   .footer-brand .logo-text {
@@ -730,7 +867,7 @@
   .footer-col h4 {
     font-size: 0.72rem; font-weight: 700;
     letter-spacing: 0.12em; text-transform: uppercase;
-    color: rgba(255,255,255,0.4); margin-bottom: 1.25rem;
+    color: rgba(255,255,255,0.7); margin-bottom: 1.25rem;
   }
   .footer-col ul { list-style: none; }
   .footer-col li { margin-bottom: 0.65rem; }
@@ -744,13 +881,38 @@
     display: flex; justify-content: space-between;
     align-items: center; flex-wrap: wrap; gap: 1rem;
   }
-  .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.3); }
+  .footer-bottom p { font-size: 0.78rem; color: rgba(255,255,255,0.7); }
   .footer-bottom a {
-    color: rgba(255,255,255,0.45);
+    color: rgba(255,255,255,0.7);
     text-decoration: none; font-size: 0.78rem;
     transition: color var(--transition);
   }
   .footer-bottom a:hover { color: var(--teal-light); }
+  .footer-ai-notice {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    text-align: center;
+  }
+  .footer-ai-notice p {
+    font-size: 0.78rem;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.7;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  .ai-badge-mini {
+    display: inline-block;
+    background: var(--navy-dark);
+    border: 1px solid var(--teal);
+    color: var(--teal-light);
+    font-size: 0.72rem;
+    padding: 0.18rem 0.55rem;
+    border-radius: 4px;
+    font-weight: 700;
+    margin-right: 0.5rem;
+    letter-spacing: 0.03em;
+  }
 
   /* ── FLOATING WA ── */
   .wa-float {
@@ -813,6 +975,7 @@
     <li><a href="#valore">Perché noi</a></li>
     <li><a href="#servizi">Aree di Expertise</a></li>
     <li><a href="#come-funziona">Come Funziona</a></li>
+    <li><a href="#tecnologia">Tecnologia</a></li>
     <li><a href="#pricing">Pricing</a></li>
     <li><a href="#partner">Partner</a></li>
     <li><a href="#contatti" class="nav-cta">Contattaci</a></li>
@@ -822,20 +985,25 @@
   </div>
 </nav>
 
+<main id="main-content">
+
 <!-- HERO -->
 <section id="hero">
   <div class="hero-inner">
     <div class="hero-content">
-      <div class="hero-badge">Hub consulenziale per PMI e Aziende</div>
+      <div class="hero-badges">
+        <div class="hero-badge hero-badge-ai">⚡ AI-Augmented Hub</div>
+        <div class="hero-badge">Per PMI e Aziende</div>
+      </div>
       <h1 class="hero-title">
         Fissa gli obiettivi<br>
         della tua <span class="accent">azienda</span>.<br>
         Al resto <span class="teal-accent">pensiamo noi</span>.
       </h1>
       <p class="hero-sub">
-        Consulente360 è un aggregatore di competenze al servizio delle PMI: 
-        un'unica regia per consulenza del lavoro, fisco, sicurezza, medicina del lavoro 
-        e compliance HR. Coordiniamo, semplifichiamo, monitoriamo.
+        Un unico referente. Una rete di professionisti certificati.
+        Un'intelligenza artificiale che anticipa scadenze, organizza documenti e
+        sintetizza le comunicazioni. Tu fissi gli obiettivi, noi orchestriamo il back-office.
       </p>
       <div class="hero-ctas">
         <a href="#contatti" class="btn-primary">
@@ -856,8 +1024,8 @@
           <div class="hero-stat-label">Unico referente</div>
         </div>
         <div class="hero-stat">
-          <div class="hero-stat-num">24h</div>
-          <div class="hero-stat-label">Tempi di risposta</div>
+          <div class="hero-stat-num">AI</div>
+          <div class="hero-stat-label">Potenziato da intelligenza artificiale</div>
         </div>
       </div>
     </div>
@@ -901,6 +1069,11 @@
         <div class="valore-icon icon-amber">🛡</div>
         <h3>Compliance garantita</h3>
         <p>Monitoraggio costante delle scadenze, normativa del lavoro sempre aggiornata, certificazioni di sicurezza tracciate. La tua azienda è sempre in regola, senza preoccupazioni.</p>
+      </div>
+      <div class="valore-card valore-card-ai fade-up">
+        <div class="valore-icon icon-ai">🧠</div>
+        <h3>Intelligenza che lavora per te</h3>
+        <p>Analizziamo documenti, anticipiamo scadenze e sintetizziamo comunicazioni con strumenti AI di ultima generazione. I professionisti si concentrano sul valore strategico — l'automazione fa il resto.</p>
       </div>
     </div>
   </div>
@@ -1025,6 +1198,12 @@
       <p class="section-sub">Nessuna complessità operativa. Tu gestisci il business, noi gestiamo il resto.</p>
     </div>
     <div class="steps-grid">
+      <div class="step step-ai fade-up">
+        <div class="step-number">00</div>
+        <div class="step-icon">🧠</div>
+        <h3>Onboarding intelligente</h3>
+        <p>L'AI analizza la tua azienda, propone il modello ottimale e prepara la documentazione personalizzata in 24h. Inizi a operare prima.</p>
+      </div>
       <div class="step fade-up">
         <div class="step-number">01</div>
         <div class="step-icon">📋</div>
@@ -1042,6 +1221,48 @@
         <div class="step-icon">📈</div>
         <h3>Monitoraggio e ottimizzazione</h3>
         <p>Monitoraggio continuo della compliance, alert sulle scadenze critiche, reportistica periodica. Sei sempre aggiornato senza dover gestire nulla direttamente.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TECNOLOGIA / AI LAYER -->
+<section id="tecnologia">
+  <div class="container">
+    <div class="section-header fade-up">
+      <span class="section-tag">La differenza</span>
+      <h2 class="section-title">Umani + AI.<br>Dove ciascuno è al meglio.</h2>
+      <p class="section-sub">Consulente360 non sostituisce i professionisti. Li potenzia con strumenti AI che eliminano il lavoro ripetitivo e amplificano quello strategico. Trasparenza totale: ogni output AI è validato da un professionista umano prima di arrivare a te.</p>
+    </div>
+
+    <div class="tech-grid">
+      <div class="tech-card fade-up">
+        <div class="tech-icon">📄</div>
+        <h3>Documenti intelligenti</h3>
+        <p>I tuoi documenti vengono analizzati, categorizzati e indicizzati automaticamente. Cerca qualsiasi informazione in linguaggio naturale.</p>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">⏰</div>
+        <h3>Scadenze anticipate</h3>
+        <p>L'AI monitora normativa e calendari fiscali. Ricevi alert prima che le scadenze diventino urgenze.</p>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">💬</div>
+        <h3>Comunicazioni sintetizzate</h3>
+        <p>Le conversazioni con i tuoi consulenti vengono riassunte in punti chiave. Niente più ore perse a recuperare email.</p>
+      </div>
+      <div class="tech-card fade-up">
+        <div class="tech-icon">🎯</div>
+        <h3>Suggerimenti contestuali</h3>
+        <p>L'AI analizza il tuo profilo aziendale e suggerisce ottimizzazioni mirate a te e ai partner di area.</p>
+      </div>
+    </div>
+
+    <div class="tech-disclaimer fade-up">
+      <div class="tech-disclaimer-icon">🛡</div>
+      <div>
+        <h4>Trasparenza e responsabilità</h4>
+        <p>Ogni output AI viene validato da un professionista umano prima di essere comunicato. L'AI accelera, il professionista decide. Operiamo su standard GDPR con dati custoditi su infrastrutture europee.</p>
       </div>
     </div>
   </div>
@@ -1300,6 +1521,11 @@
           <label for="messaggio">Messaggio</label>
           <textarea id="messaggio" name="messaggio" placeholder="Descrivi brevemente la tua azienda, il numero di dipendenti e le tue esigenze..."></textarea>
         </div>
+        <input type="hidden" id="source" name="source" value="sito-web">
+        <input type="hidden" id="page-version" name="page_version" value="v2.1-ai">
+        <input type="hidden" id="utm-source" name="utm_source" value="">
+        <input type="hidden" id="utm-campaign" name="utm_campaign" value="">
+        <input type="hidden" id="utm-medium" name="utm_medium" value="">
         <button type="button" class="form-submit" onclick="handleSubmit()">
           Invia richiesta →
         </button>
@@ -1311,6 +1537,8 @@
     </div>
   </div>
 </section>
+
+</main>
 
 <!-- FOOTER -->
 <footer>
@@ -1348,6 +1576,17 @@
         <a href="#">Cookie Policy</a>
       </div>
     </div>
+    <!-- AI CHATBOT WIDGET — Da attivare in Sprint 2 (vedi C360_Strategia_AI.md § 5 Layer 1) -->
+    <!-- <div id="c360-ai-chat"></div> -->
+    <!-- <script src="/assets/chatbot.js"></script> -->
+
+    <div class="footer-ai-notice">
+      <p>
+        <span class="ai-badge-mini">⚡ AI-Augmented</span>
+        Operiamo con strumenti AI di ultima generazione (Claude — Anthropic) su standard GDPR.
+        Dati custoditi su infrastrutture europee. Ogni output AI è validato da un professionista umano prima di essere comunicato al cliente.
+      </p>
+    </div>
   </div>
 </footer>
 
@@ -1381,7 +1620,18 @@
   }, { threshold: 0.1 });
   document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 
-  function handleSubmit() {
+  // UTM tracking per pipeline Notion (popola hidden fields al load)
+  (function() {
+    const urlParams = new URLSearchParams(window.location.search);
+    ['utm_source', 'utm_campaign', 'utm_medium'].forEach(param => {
+      const field = document.getElementById(param.replace('_', '-'));
+      if (field && urlParams.get(param)) {
+        field.value = urlParams.get(param);
+      }
+    });
+  })();
+
+  async function handleSubmit() {
     const nome = document.getElementById('nome').value;
     const email = document.getElementById('email').value;
     if (!nome || !email) {
@@ -1396,6 +1646,33 @@
     const telefono = document.getElementById('telefono').value;
     const modello = document.getElementById('modello').value;
     const messaggio = document.getElementById('messaggio').value;
+
+    // Payload strutturato per pipeline Notion (via Formspree/Make.com)
+    const formData = {
+      nome, azienda, email, telefono, modello, messaggio,
+      source: document.getElementById('source').value,
+      page_version: document.getElementById('page-version').value,
+      utm_source: document.getElementById('utm-source').value,
+      utm_campaign: document.getElementById('utm-campaign').value,
+      utm_medium: document.getElementById('utm-medium').value,
+      timestamp: new Date().toISOString()
+    };
+
+    // Webhook Formspree → Make.com → Notion (endpoint da configurare)
+    // Decommentare e sostituire l'URL quando l'endpoint è attivo.
+    /*
+    try {
+      await fetch('https://formspree.io/f/CODICE_DA_INSERIRE', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      });
+    } catch (err) {
+      console.warn('Webhook fallito, procedo con WhatsApp:', err);
+    }
+    */
+
+    // Fallback (e canale principale finché il webhook non è configurato): WhatsApp
     let waText = `Nuova richiesta Consulente360%0A%0A`;
     waText += `Nome: ${encodeURIComponent(nome)}%0A`;
     waText += `Email: ${encodeURIComponent(email)}%0A`;
