@@ -621,6 +621,32 @@
     line-height: 1.6;
   }
 
+  /* PRICING v2.2 — compose / tier ladder / packages */
+  .price-compose { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; margin-bottom: 3.5rem; }
+  .compose-card { background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-lg); padding: 1.8rem; }
+  .compose-icon { font-size: 1.8rem; margin-bottom: 0.8rem; }
+  .compose-card h3 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 600; color: var(--text-dark); margin-bottom: 0.5rem; }
+  .compose-card p { color: var(--text-mid); font-size: 0.95rem; line-height: 1.6; }
+
+  .pricing-block-title { font-family: var(--font-display); font-size: 1.9rem; font-weight: 600; color: var(--navy); text-align: center; margin-bottom: 1.6rem; }
+
+  .tier-block { max-width: 720px; margin: 0 auto; }
+  .tier-ladder { background: var(--white); border: 1px solid var(--gray-100); border-radius: var(--radius-lg); overflow: hidden; }
+  .tier-row { display: grid; grid-template-columns: 1fr 1fr auto; align-items: center; gap: 1rem; padding: 1rem 1.5rem; border-bottom: 1px solid var(--gray-100); }
+  .tier-row:last-child { border-bottom: none; }
+  .tier-dip { color: var(--text-mid); font-size: 0.95rem; }
+  .tier-name { font-weight: 600; color: var(--text-dark); }
+  .tier-price { font-family: var(--font-display); font-size: 1.4rem; font-weight: 600; color: var(--navy); text-align: right; white-space: nowrap; }
+  .tier-price small { display: block; font-family: var(--font-body); font-size: 0.7rem; font-weight: 400; color: var(--gray-400); }
+  .tier-note { text-align: center; color: var(--gray-400); font-size: 0.85rem; margin-top: 1rem; }
+
+  .package-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem; }
+  .package-custom { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; flex-wrap: wrap; background: var(--navy); color: var(--white); border-radius: var(--radius-lg); padding: 1.5rem 2rem; margin-top: 1.5rem; }
+  .package-custom strong { display: block; font-size: 1.1rem; margin-bottom: 0.2rem; }
+  .package-custom span { color: rgba(255,255,255,0.7); font-size: 0.95rem; }
+  .package-custom .price-cta { white-space: nowrap; width: auto; padding: 0.85rem 1.6rem; background: var(--teal); border-color: var(--teal); color: var(--white); margin-top: 0; }
+  .package-custom .price-cta:hover { background: var(--teal-light); border-color: var(--teal-light); color: var(--white); }
+
   /* ── PARTNER ── */
   #partner { background: var(--white); }
   .partner-subsection { margin-bottom: 4rem; }
@@ -953,6 +979,10 @@
     .footer-top { grid-template-columns: 1fr; gap: 2rem; }
     .hero-ctas { flex-direction: column; }
     .hero-ctas .btn-primary, .hero-ctas .btn-whatsapp { justify-content: center; }
+    .price-compose { grid-template-columns: 1fr; }
+    .tier-row { grid-template-columns: 1fr auto; }
+    .tier-row .tier-name { display: none; }
+    .package-grid { grid-template-columns: 1fr; }
   }
 
   /* ── SCROLL ANIMATIONS ── */
@@ -1268,83 +1298,144 @@
   </div>
 </section>
 
-<!-- PRICING (3 OPTIONS) -->
+<!-- PRICING (v2.2 — tier dimensionali + pacchetti settoriali) -->
 <section id="pricing">
   <div class="container">
-    <div class="section-header fade-up" style="text-align: center; max-width: 700px; margin: 0 auto 3.5rem;">
-      <span class="section-tag">Modelli di attivazione</span>
-      <h2 class="section-title">Tre modi per attivare<br>Consulente360</h2>
-      <p class="section-sub" style="margin: 0 auto;">Scegli il livello di centralizzazione più adatto alla tua azienda. Tariffe trasparenti, nessun vincolo nascosto.</p>
+    <div class="section-header fade-up" style="text-align:center; max-width:760px; margin:0 auto 3rem;">
+      <span class="section-tag">Prezzi</span>
+      <h2 class="section-title">Prezzi trasparenti,<br>costruiti sulla tua impresa</h2>
+      <p class="section-sub" style="margin:0 auto;">Un canone in base alla dimensione dell'azienda. I servizi specialistici li paghi solo quando li attivi, a tariffe di rete convenzionate. Nessun costo nascosto.</p>
     </div>
-    <div class="pricing-grid">
 
-      <!-- Card 1: HUB SOLO -->
-      <div class="price-card fade-up">
-        <div class="price-tier-name">Hub Solo</div>
-        <div class="price-tier-sub">Solo coordinamento</div>
-        <div class="price-amount">€ 50<span class="price-period">/ mese</span></div>
-        <p class="price-best-for">Mantieni i tuoi attuali professionisti — noi ci occupiamo del coordinamento</p>
-        <div class="price-divider"></div>
-        <ul class="price-features">
-          <li>Reperibilità dedicata</li>
-          <li>Raccordo tra i tuoi professionisti esterni</li>
-          <li>Monitoraggio scadenze HR e fiscali</li>
-          <li>Alert compliance continuo</li>
-          <li>Un unico punto di contatto</li>
-          <li>Reportistica mensile</li>
-        </ul>
-        <a href="#contatti" class="price-cta">Richiedi attivazione</a>
+    <!-- BLOCCO A — Come si compone il prezzo -->
+    <div class="price-compose fade-up">
+      <div class="compose-card">
+        <div class="compose-icon">🧭</div>
+        <h3>Canone Hub</h3>
+        <p>Coordinamento, cruscotto delle scadenze, referente unico e AI. Cresce con la dimensione dell'azienda — da € 0 per chi lavora da solo.</p>
       </div>
+      <div class="compose-card">
+        <div class="compose-icon">🧩</div>
+        <h3>Servizi a consumo</h3>
+        <p>Le pratiche specialistiche — sicurezza, HACCP, dossier fiscali, pratiche del lavoro — le paghi solo quando le attivi.</p>
+      </div>
+      <div class="compose-card">
+        <div class="compose-icon">🤝</div>
+        <h3>Tariffe di rete convenzionate</h3>
+        <p>I professionisti del network operano a condizioni negoziate a volume: un risparmio reale, non una semplice etichetta.</p>
+      </div>
+    </div>
 
-      <!-- Card 2: HUB + NETWORK (featured) -->
-      <div class="price-card featured fade-up">
-        <span class="price-badge">⭐ Più scelto</span>
-        <div class="price-tier-name">Hub + Network</div>
-        <div class="price-tier-sub">Bundle progressivo</div>
-        <div class="price-from">A partire da</div>
-        <div class="price-amount">€ 0<span class="price-period">/ mese</span></div>
-        <p class="price-best-for">Centralizza progressivamente i professionisti. Più servizi attivi, più il canone si azzera.</p>
-        <div class="price-bundle-detail">
-          <strong>Logica dello sconto bundle</strong>
-          <div class="price-bundle-detail-row"><span>Base canone hub</span><span>€ 50</span></div>
-          <div class="price-bundle-detail-row"><span>- 1 partner attivo</span><span>- € 15</span></div>
-          <div class="price-bundle-detail-row"><span>- 2 partner attivi</span><span>- € 30</span></div>
-          <div class="price-bundle-detail-row"><span>- 3+ partner attivi</span><span>- € 50</span></div>
+    <!-- BLOCCO B — Canone Hub per dimensione -->
+    <div class="tier-block fade-up">
+      <h3 class="pricing-block-title">Il canone Hub in base alla dimensione</h3>
+      <div class="tier-ladder">
+        <div class="tier-row">
+          <span class="tier-dip">0 dipendenti</span>
+          <span class="tier-name">Solo</span>
+          <span class="tier-price">€ 0<small>/ mese · solo a consumo</small></span>
         </div>
+        <div class="tier-row">
+          <span class="tier-dip">1–5 dipendenti</span>
+          <span class="tier-name">Micro</span>
+          <span class="tier-price">da € 59<small>/ mese</small></span>
+        </div>
+        <div class="tier-row">
+          <span class="tier-dip">6–15 dipendenti</span>
+          <span class="tier-name">Piccola</span>
+          <span class="tier-price">da € 149<small>/ mese</small></span>
+        </div>
+        <div class="tier-row">
+          <span class="tier-dip">16–50 dipendenti</span>
+          <span class="tier-name">Strutturata</span>
+          <span class="tier-price">da € 399<small>/ mese</small></span>
+        </div>
+        <div class="tier-row">
+          <span class="tier-dip">Oltre 50</span>
+          <span class="tier-name">Enterprise</span>
+          <span class="tier-price">su misura</span>
+        </div>
+      </div>
+      <p class="tier-note">Il canone include il coordinamento di tutte le aree, il cruscotto scadenze e l'AI. IVA esclusa.</p>
+    </div>
+
+    <!-- BLOCCO C — Pacchetti per settore -->
+    <h3 class="pricing-block-title" style="margin-top:3.5rem;">Pacchetti pronti per settore</h3>
+    <div class="package-grid">
+
+      <div class="price-card featured fade-up">
+        <span class="price-badge">⭐ Più richiesto</span>
+        <div class="price-tier-name">Ristorazione</div>
+        <div class="price-tier-sub">Bar, ristoranti, food</div>
+        <div class="price-from">A partire da</div>
+        <div class="price-amount">€ 149<span class="price-period">/ mese</span></div>
         <ul class="price-features">
-          <li>Tutti i vantaggi di Hub Solo</li>
-          <li>Tariffe convenzionate con i partner network</li>
-          <li>Onboarding integrato dei servizi</li>
-          <li>Documenti condivisi via portale</li>
-          <li>Continuità informativa tra le aree</li>
-          <li>Priority lane sulle scadenze critiche</li>
+          <li>Lavoro e buste paga</li>
+          <li>HACCP e formazione alimentaristi</li>
+          <li>Sicurezza e DVR</li>
+          <li>Medicina del lavoro</li>
+          <li>Calendario scadenze unico</li>
         </ul>
         <a href="#contatti" class="price-cta">Richiedi preventivo</a>
       </div>
 
-      <!-- Card 3: NETWORK CUSTOM -->
       <div class="price-card fade-up">
-        <div class="price-tier-name">Network Custom</div>
-        <div class="price-tier-sub">Massima flessibilità</div>
-        <div class="price-amount">€ 35<span class="price-period">/ mese flat</span></div>
-        <p class="price-best-for">Esigenze puntuali o sperimentazione. Paghi solo i servizi che attivi.</p>
-        <div class="price-divider"></div>
+        <div class="price-tier-name">Edilizia</div>
+        <div class="price-tier-sub">Imprese e cantieri</div>
+        <div class="price-from">A partire da</div>
+        <div class="price-amount">€ 149<span class="price-period">/ mese</span></div>
         <ul class="price-features">
-          <li>Accesso al network senza vincoli</li>
-          <li>Tariffe partner senza sconto applicato</li>
-          <li>Scelta del partner servizio per servizio</li>
-          <li>Trasparenza totale sui costi</li>
-          <li>Pagamento solo dei servizi attivi</li>
-          <li>Possibilità di upgrade in qualsiasi momento</li>
+          <li>Lavoro e buste paga</li>
+          <li>Sicurezza cantiere (DVR, POS, PIMUS)</li>
+          <li>DURC di congruità</li>
+          <li>Medicina del lavoro</li>
+          <li>Alert su scadenze e SAL</li>
         </ul>
-        <a href="#contatti" class="price-cta">Personalizza</a>
+        <a href="#contatti" class="price-cta">Richiedi preventivo</a>
+      </div>
+
+      <div class="price-card fade-up">
+        <div class="price-tier-name">Artigianato</div>
+        <div class="price-tier-sub">Botteghe e laboratori</div>
+        <div class="price-from">A partire da</div>
+        <div class="price-amount">€ 59<span class="price-period">/ mese</span></div>
+        <ul class="price-features">
+          <li>Lavoro e buste paga</li>
+          <li>Fisco e contabilità</li>
+          <li>Sicurezza essenziale</li>
+          <li>Un unico referente</li>
+          <li>Pratiche solo a consumo</li>
+        </ul>
+        <a href="#contatti" class="price-cta">Richiedi preventivo</a>
+      </div>
+
+      <div class="price-card fade-up">
+        <div class="price-tier-name">Agricoltura</div>
+        <div class="price-tier-sub">Aziende agricole</div>
+        <div class="price-from">A partire da</div>
+        <div class="price-amount">€ 149<span class="price-period">/ mese</span></div>
+        <ul class="price-features">
+          <li>Lavoro agricolo e stagionali</li>
+          <li>Fisco agricolo</li>
+          <li>Domande PAC / AGEA</li>
+          <li>Sicurezza</li>
+          <li>HACCP per la trasformazione</li>
+        </ul>
+        <a href="#contatti" class="price-cta">Richiedi preventivo</a>
       </div>
 
     </div>
+
+    <div class="package-custom fade-up">
+      <div>
+        <strong>Altro settore?</strong>
+        <span>Costruiamo il pacchetto sulle aree che ti servono, con la stessa logica trasparente.</span>
+      </div>
+      <a href="#contatti" class="price-cta">Parliamone</a>
+    </div>
+
     <p class="pricing-disclaimer fade-up">
-      Prezzi indicativi soggetti a conferma in fase di onboarding. IVA esclusa. 
-      Gli sconti del bundle si applicano dal momento dell'attivazione del servizio del partner. 
-      Tutte le tariffe sono comunicate in modo trasparente prima della sottoscrizione.
+      Prezzi indicativi, IVA esclusa, soggetti a conferma in fase di onboarding. Lo sconto sulle tariffe di rete deriva da condizioni negoziate a volume con i professionisti del network. Ogni output dell'AI è validato da un professionista prima di essere comunicato.
     </p>
   </div>
 </section>
@@ -1508,12 +1599,14 @@
           </div>
         </div>
         <div class="form-group">
-          <label for="modello">Modello di attivazione di interesse</label>
+          <label for="modello">Settore / pacchetto di interesse</label>
           <select id="modello" name="modello">
-            <option value="">— Seleziona un modello —</option>
-            <option value="hub-solo">Hub Solo (solo coordinamento — €50/mese)</option>
-            <option value="hub-network">Hub + Network (bundle progressivo)</option>
-            <option value="custom">Network Custom (flessibilità massima — €35/mese flat)</option>
+            <option value="">— Seleziona —</option>
+            <option value="ristorazione">Ristorazione</option>
+            <option value="edilizia">Edilizia</option>
+            <option value="artigianato">Artigianato</option>
+            <option value="agricoltura">Agricoltura</option>
+            <option value="altro">Altro settore</option>
             <option value="info">Non sono sicuro, voglio informazioni</option>
           </select>
         </div>
@@ -1522,7 +1615,7 @@
           <textarea id="messaggio" name="messaggio" placeholder="Descrivi brevemente la tua azienda, il numero di dipendenti e le tue esigenze..."></textarea>
         </div>
         <input type="hidden" id="source" name="source" value="sito-web">
-        <input type="hidden" id="page-version" name="page_version" value="v2.1-ai">
+        <input type="hidden" id="page-version" name="page_version" value="v2.2-ai">
         <input type="hidden" id="utm-source" name="utm_source" value="">
         <input type="hidden" id="utm-campaign" name="utm_campaign" value="">
         <input type="hidden" id="utm-medium" name="utm_medium" value="">
